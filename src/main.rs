@@ -83,7 +83,7 @@ impl EventHandler for Handler {
             if msg
                 .guild_id
                 .unwrap()
-                .member(&ctx, msg.author.id)
+                .member(ctx, msg.author.id)
                 .await
                 .unwrap()
                 .permissions(&ctx)
