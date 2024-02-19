@@ -81,9 +81,12 @@ impl EventHandler for Handler {
             }
         } else if msg.content.starts_with("!ver-config") {
             if msg
-                .member
+                .guild_id
                 .unwrap()
-                .permissions
+                .member(&ctx, msg.author.id)
+                .await
+                .unwrap()
+                .permissions(&ctx)
                 .unwrap()
                 .contains(Permissions::ADMINISTRATOR)
             {
