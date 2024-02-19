@@ -86,7 +86,7 @@ impl EventHandler for Handler {
                 .member(ctx, msg.author.id)
                 .await
                 .unwrap()
-                .permissions(&ctx)
+                .permissions
                 .unwrap()
                 .contains(Permissions::ADMINISTRATOR)
             {
